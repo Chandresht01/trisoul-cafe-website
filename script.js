@@ -1,52 +1,251 @@
-const menu = [
-  {cat:"Momos", items:[
-    ["Veg Steam","70 / 90"],["Veg Steam Cheese","80 / 100"],["Paneer Steam","80 / 100"],["Paneer Steam Cheese","90 / 110"],["Cheese Corn Steam","110 / 130"],["Cheese Corn Steam Cheese","130 / 150"],
-    ["Veg Fried","90 / 110"],["Veg Fried Cheese","100 / 120"],["Paneer Fried","110 / 130"],["Paneer Fried Cheese","120 / 140"],["Cheese Corn Fried","130 / 150"],["Cheese Corn Fried Cheese","140 / 160"],
-    ["Veg Kurkure","100 / 120"],["Veg Kurkure Cheese","110 / 130"],["Paneer Kurkure","120 / 140"],["Paneer Kurkure Cheese","130 / 150"],["Cheese Corn Kurkure","140 / 160"],["Cheese Corn Kurkure Cheese","150 / 170"],
-    ["Jhol Momo","109"],["Manchow Momo","109"],["Pizza Momo","99"],["Saucy Veg Momo","99"],["Saucy Paneer Momo","99"]
-  ]},
-  {cat:"Pizza",items:[["Veggie","99"],["Margerita","99"],["Cheese Corn","109"],["Paneer Tikka","109"],["Pasta Pizza","129"],["Veg Loaded","129"]]},
-  {cat:"Burgers",items:[["Classic Veg","69"],["Veg Cheese","79"],["Peri Peri","69"],["Peri Peri Cheese","79"]]},
-  {cat:"Sandwich",items:[["Veg Grill","59"],["Veg Cheese Grill","69"],["Mexican Grill","69"],["Cheese Corn","69"],["Cheese Chilly","79"],["Paneer Tikka","79"]]},
-  {cat:"Fries",items:[["Salted","59"],["Peri Peri","69"],["Peri Peri Cheese","79"],["Cheese","79"],["Loaded Fries","99"]]},
-  {cat:"Maggie",items:[["Plain","49"],["Yipee","49"],["Cheese","59"],["Vegetable","59"],["Vegetable Cheese","69"]]},
-  {cat:"Pasta",items:[["Red Sauce","109"],["White Sauce","109"],["Masala Penne","109"]]},
-  {cat:"Waffles",items:[["White Choco Delight","89"],["Dark Choco Bliss","89"],["Milk Choco","99"],["Crunch","99"],["Triple Chocolate","99"],["Kitkat Crunch","99"],["Oreo Crumble","99"]]},
-  {cat:"Hot Brownies",items:[["Triple Chocolate","89"],["Kitkat Crunch","89"],["Oreo Crumble","89"]]},
-  {cat:"Spiral Potato",items:[["Salted","59"],["Peri Peri","69"],["Peri Peri Cheese","69"],["Cheese","69"],["Mayonise","69"]]},
-  {cat:"Quick Bites",items:[["Potato Garlic Shots","89"],["Cheese Garlic Bread","89"],["Paneer Garlic Bread","89"],["Corn & Cheese Nachos","89"],["Corn & Cheese","89"]]},
-  {cat:"Coffee & Tea",items:[["Hot Coffee","25"],["Cold Coffee","60"],["Masala Chai","20"],["Bread Butter Jam","35"]]},
-  {cat:"Mojitos",items:[["Strawberry","79"],["Watermelon","79"],["Green Mint","79"],["Kaichi Kairi","79"],["Chilli Guava","79"],["Kala Khatta","79"],["Green Apple","79"],["Jamun","79"],["Blue Lagoon","79"],["Orange","79"]]},
-  {cat:"Milkshake",items:[["Strawberry","79"],["Mango","79"],["Chocolate","79"],["Black Current","79"],["Variyali","79"],["Oreo","79"],["Brownie Shake","79"],["Cold Coffee with Icecream","79"]]},
-  {cat:"Korean Snow Flakes",items:[["Butterscotch","79"],["Chocolate","79"],["Mango","79"],["Strawberry","79"],["Chilli Guava","79"],["Coffee","79"],["Black Current","79"]]},
-  {cat:"Desserts",items:[["Hot Sizzling Brownie with Ice Cream","100"]]}
+const menuData = [
+
+  // MOMOS
+  { category: "Momos", name: "Veg Steam Momo", price: "₹70 / ₹90" },
+  { category: "Momos", name: "Veg Steam Cheese Momo", price: "₹80 / ₹100" },
+  { category: "Momos", name: "Paneer Steam Momo", price: "₹80 / ₹100" },
+  { category: "Momos", name: "Paneer Steam Cheese Momo", price: "₹90 / ₹110" },
+  { category: "Momos", name: "Cheese Corn Steam Momo", price: "₹110 / ₹130" },
+  { category: "Momos", name: "Cheese Corn Steam Cheese Momo", price: "₹130 / ₹150" },
+
+  { category: "Momos", name: "Veg Fried Momo", price: "₹90 / ₹110" },
+  { category: "Momos", name: "Veg Fried Cheese Momo", price: "₹100 / ₹120" },
+  { category: "Momos", name: "Paneer Fried Momo", price: "₹110 / ₹130" },
+  { category: "Momos", name: "Paneer Fried Cheese Momo", price: "₹120 / ₹140" },
+  { category: "Momos", name: "Cheese Corn Fried Momo", price: "₹130 / ₹150" },
+  { category: "Momos", name: "Cheese Corn Fried Cheese Momo", price: "₹140 / ₹160" },
+
+  { category: "Momos", name: "Veg Kurkure Momo", price: "₹100 / ₹120" },
+  { category: "Momos", name: "Veg Kurkure Cheese Momo", price: "₹110 / ₹130" },
+  { category: "Momos", name: "Paneer Kurkure Momo", price: "₹120 / ₹140" },
+  { category: "Momos", name: "Paneer Kurkure Cheese Momo", price: "₹130 / ₹150" },
+  { category: "Momos", name: "Cheese Corn Kurkure Momo", price: "₹140 / ₹160" },
+  { category: "Momos", name: "Cheese Corn Kurkure Cheese Momo", price: "₹150 / ₹170" },
+
+  { category: "Momos", name: "Jhol Momo", price: "₹109" },
+  { category: "Momos", name: "Manchow Momo", price: "₹109" },
+  { category: "Momos", name: "Pizza Momo", price: "₹99" },
+  { category: "Momos", name: "Saucy Veg Momo", price: "₹99" },
+  { category: "Momos", name: "Saucy Paneer Momo", price: "₹99" },
+
+  // PIZZA
+  { category: "Pizza", name: "Veggie Pizza", price: "₹99" },
+  { category: "Pizza", name: "Margherita Pizza", price: "₹99" },
+  { category: "Pizza", name: "Cheese Pizza", price: "₹109" },
+  { category: "Pizza", name: "Cheese Corn Pizza", price: "₹109" },
+  { category: "Pizza", name: "Paneer Tikka Pizza", price: "₹109" },
+  { category: "Pizza", name: "Pasta Pizza", price: "₹129" },
+  { category: "Pizza", name: "Veg Loaded Pizza", price: "₹129" },
+
+  // BURGERS
+  { category: "Burgers", name: "Classic Veg Burger", price: "₹69" },
+  { category: "Burgers", name: "Veg Cheese Burger", price: "₹79" },
+  { category: "Burgers", name: "Peri Peri Burger", price: "₹69" },
+  { category: "Burgers", name: "Peri Peri Cheese Burger", price: "₹79" },
+
+  // SANDWICH
+  { category: "Sandwich", name: "Veg Grill Sandwich", price: "₹59" },
+  { category: "Sandwich", name: "Veg Cheese Grill Sandwich", price: "₹69" },
+  { category: "Sandwich", name: "Mexican Grill Sandwich", price: "₹69" },
+  { category: "Sandwich", name: "Cheese Corn Sandwich", price: "₹69" },
+  { category: "Sandwich", name: "Cheese Chilly Sandwich", price: "₹79" },
+  { category: "Sandwich", name: "Paneer Tikka Sandwich", price: "₹79" },
+
+  // FRIES
+  { category: "Fries", name: "Salted Fries", price: "₹59" },
+  { category: "Fries", name: "Peri Peri Fries", price: "₹69" },
+  { category: "Fries", name: "Peri Peri Cheese Fries", price: "₹79" },
+  { category: "Fries", name: "Cheese Fries", price: "₹79" },
+  { category: "Fries", name: "Loaded Fries", price: "₹99" },
+
+  // MAGGIE
+  { category: "Maggie", name: "Plain Maggie", price: "₹49" },
+  { category: "Maggie", name: "Yippee", price: "₹49" },
+  { category: "Maggie", name: "Cheese Maggie", price: "₹59" },
+  { category: "Maggie", name: "Vegetable Maggie", price: "₹59" },
+  { category: "Maggie", name: "Vegetable Cheese Maggie", price: "₹69" },
+
+  // PASTA
+  { category: "Pasta", name: "Red Sauce Pasta", price: "₹109" },
+  { category: "Pasta", name: "White Sauce Pasta", price: "₹109" },
+  { category: "Pasta", name: "Masala Penne Pasta", price: "₹109" },
+
+  // WAFFLES
+  { category: "Desserts", name: "White Choco Delight Waffle", price: "₹89" },
+  { category: "Desserts", name: "Dark Choco Bliss Waffle", price: "₹89" },
+  { category: "Desserts", name: "Milk Choco Waffle", price: "₹99" },
+  { category: "Desserts", name: "Crunch Waffle", price: "₹99" },
+  { category: "Desserts", name: "Triple Chocolate Waffle", price: "₹99" },
+  { category: "Desserts", name: "Kitkat Crunch Waffle", price: "₹99" },
+  { category: "Desserts", name: "Oreo Crumble Waffle", price: "₹99" },
+
+  // BROWNIES
+  { category: "Desserts", name: "Triple Chocolate Brownie", price: "₹89" },
+  { category: "Desserts", name: "Kitkat Crunch Brownie", price: "₹89" },
+  { category: "Desserts", name: "Oreo Crumble Brownie", price: "₹89" },
+
+  // SPIRAL POTATO
+  { category: "Quick Bites", name: "Salted Spiral Potato", price: "₹59" },
+  { category: "Quick Bites", name: "Peri Peri Spiral Potato", price: "₹69" },
+  { category: "Quick Bites", name: "Peri Peri Cheese Spiral Potato", price: "₹69" },
+  { category: "Quick Bites", name: "Cheese Spiral Potato", price: "₹69" },
+  { category: "Quick Bites", name: "Mayonnaise Spiral Potato", price: "₹69" },
+
+  // QUICK BITES
+  { category: "Quick Bites", name: "Potato Garlic Shots", price: "₹89" },
+  { category: "Quick Bites", name: "Cheese Garlic Bread", price: "₹89" },
+  { category: "Quick Bites", name: "Paneer Garlic Bread", price: "₹89" },
+  { category: "Quick Bites", name: "Corn & Cheese Nachos", price: "₹89" },
+  { category: "Quick Bites", name: "Corn & Cheese", price: "₹89" },
+
+  // COFFEE & TEA
+  { category: "Beverages", name: "Hot Coffee", price: "₹25" },
+  { category: "Beverages", name: "Cold Coffee", price: "₹60" },
+  { category: "Beverages", name: "Masala Chai", price: "₹20" },
+  { category: "Beverages", name: "Bread Butter Jam", price: "₹35" },
+
+  // MOJITOS
+  { category: "Mojitos", name: "Strawberry Mojito", price: "₹79" },
+  { category: "Mojitos", name: "Watermelon Mojito", price: "₹79" },
+  { category: "Mojitos", name: "Green Mint Mojito", price: "₹79" },
+  { category: "Mojitos", name: "Kaichi Kairi Mojito", price: "₹79" },
+  { category: "Mojitos", name: "Chilli Guava Mojito", price: "₹79" },
+  { category: "Mojitos", name: "Kala Khatta Mojito", price: "₹79" },
+  { category: "Mojitos", name: "Green Apple Mojito", price: "₹79" },
+  { category: "Mojitos", name: "Jamun Mojito", price: "₹79" },
+  { category: "Mojitos", name: "Blue Lagoon Mojito", price: "₹79" },
+  { category: "Mojitos", name: "Orange Mojito", price: "₹79" },
+
+  // MILKSHAKES
+  { category: "Shakes", name: "Strawberry Milkshake", price: "₹79" },
+  { category: "Shakes", name: "Mango Milkshake", price: "₹79" },
+  { category: "Shakes", name: "Chocolate Milkshake", price: "₹79" },
+  { category: "Shakes", name: "Black Current Milkshake", price: "₹79" },
+  { category: "Shakes", name: "Variyali Milkshake", price: "₹79" },
+  { category: "Shakes", name: "Oreo Milkshake", price: "₹79" },
+  { category: "Shakes", name: "Brownie Shake", price: "₹79" },
+  { category: "Shakes", name: "Cold Coffee With Ice Cream", price: "₹79" },
+
+  // BINGSU
+  { category: "Desserts", name: "Butterscotch Korean Snow Flakes", price: "₹79" },
+  { category: "Desserts", name: "Chocolate Korean Snow Flakes", price: "₹79" },
+  { category: "Desserts", name: "Mango Korean Snow Flakes", price: "₹79" },
+  { category: "Desserts", name: "Strawberry Korean Snow Flakes", price: "₹79" },
+  { category: "Desserts", name: "Chilli Guava Korean Snow Flakes", price: "₹79" },
+  { category: "Desserts", name: "Coffee Korean Snow Flakes", price: "₹79" },
+  { category: "Desserts", name: "Black Current Korean Snow Flakes", price: "₹79" },
+
+  // SPECIAL
+  { category: "Desserts", name: "Hot Sizzling Brownie With Ice Cream", price: "₹100" }
+
 ];
 
+
+const menuGrid = document.getElementById("menuGrid");
 const filters = document.getElementById("filters");
-const grid = document.getElementById("menuGrid");
 
-function renderFilters() {
-  filters.innerHTML = `<button class="filter active" data-cat="all">All</button>` +
-    menu.map(m => `<button class="filter" data-cat="${m.cat}">${m.cat}</button>`).join("");
-  filters.querySelectorAll(".filter").forEach(btn => btn.addEventListener("click", () => {
-    filters.querySelectorAll(".filter").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderMenu(btn.dataset.cat);
-  }));
+
+/* ================= FILTERS ================= */
+
+const categories = [
+  "All",
+  ...new Set(menuData.map(item => item.category))
+];
+
+
+categories.forEach(category => {
+
+  const button = document.createElement("button");
+
+  button.className = "filter-btn";
+
+  if (category === "All") {
+    button.classList.add("active");
+  }
+
+  button.textContent = category;
+
+  button.addEventListener("click", () => {
+
+    document
+      .querySelectorAll(".filter-btn")
+      .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    renderMenu(category);
+
+  });
+
+  filters.appendChild(button);
+
+});
+
+
+/* ================= MENU RENDER ================= */
+
+function renderMenu(category = "All") {
+
+  menuGrid.innerHTML = "";
+
+  const items =
+    category === "All"
+      ? menuData
+      : menuData.filter(item => item.category === category);
+
+
+  items.forEach((item, index) => {
+
+    const card = document.createElement("article");
+
+    card.className = "menu-card";
+
+    card.innerHTML = `
+
+      <div class="menu-card-top">
+
+        <span class="menu-number">
+          ${String(index + 1).padStart(2, "0")}
+        </span>
+
+        <span class="menu-category">
+          ${item.category}
+        </span>
+
+      </div>
+
+      <div class="menu-card-content">
+
+        <h3>
+          ${item.name}
+        </h3>
+
+        <div class="menu-line"></div>
+
+        <strong>
+          ${item.price}
+        </strong>
+
+      </div>
+
+    `;
+
+    menuGrid.appendChild(card);
+
+  });
+
 }
 
-function renderMenu(category="all") {
-  const data = category === "all" ? menu : menu.filter(m => m.cat === category);
-  grid.innerHTML = data.map(section => `
-    <article class="menu-card">
-      <h3>${section.cat}</h3>
-      <ul>${section.items.map(([name, price]) => `
-        <li><span>${name}</span><span class="price">₹${price}</span></li>
-      `).join("")}</ul>
-    </article>
-  `).join("");
-}
 
-renderFilters();
+/* ================= INITIAL MENU ================= */
+
 renderMenu();
-document.getElementById("year").textContent = new Date().getFullYear();
+
+
+/* ================= YEAR ================= */
+
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
